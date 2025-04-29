@@ -1,0 +1,71 @@
+from pathlib import Path
+from IPython.display import display, HTML
+
+# Create HTML5 landing page template as a string
+landing_page_html = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Reverberate: The Blame We Exchange - A powerful self-help psychology book by Aiden Valenciano that challenges projection, accountability, and emotional patterns." />
+  <meta name="keywords" content="Reverberate, The Blame We Exchange, Aiden Valenciano, self-help, psychology, projection, relationships, accountability, emotional intelligence" />
+  <title>Reverberate: The Blame We Exchange</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .subtitle {
+      color: gold;
+      font-weight: bold;
+    }
+    body {
+      background-color: #1a002d;
+    }
+  </style>
+</head>
+<body class="text-white font-sans antialiased">
+  <!-- Hero Section -->
+  <section class="text-center py-20 px-4">
+    <img src="cover.jpg" alt="Reverberate Book Cover" class="mx-auto w-60 mb-8 rounded-lg shadow-lg">
+    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Reverberate: The Blame We Exchange</h1>
+    <p class="subtitle text-xl mb-6">Understanding Ourselves Through Others</p>
+    <a href="#order" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-full shadow-lg transition duration-300">Order Now</a>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="max-w-3xl mx-auto text-center py-10">
+    <h2 class="text-3xl font-bold mb-6">Why You'll Love This Book</h2>
+    <ul class="space-y-4 text-lg">
+      <li>• Decode projection, gaslighting, and accountability loops</li>
+      <li>• Unlock deep emotional intelligence and self-awareness</li>
+      <li>• Real-life stories and reflective exercises in every chapter</li>
+      <li>• Visually stunning and psychologically gripping</li>
+      <li>• Written for anyone ready to break the cycle</li>
+    </ul>
+  </section>
+
+  <!-- Emotional Hook Section -->
+  <section class="bg-gradient-to-r from-purple-900 via-pink-800 to-yellow-500 py-20 text-center">
+    <h2 class="text-3xl md:text-4xl font-semibold mb-6">You were never the problem alone.</h2>
+    <p class="max-w-2xl mx-auto text-lg">This book isn’t just about blame—it’s about reclaiming the story. About seeing how your pain mirrors someone else’s. And how healing doesn’t start when they change—it starts when you do.</p>
+  </section>
+
+  <!-- Call to Action -->
+  <section id="order" class="text-center py-20">
+    <h2 class="text-3xl font-bold mb-6">Own the Book Everyone’s Talking About</h2>
+    <p class="mb-8">Start your journey toward emotional freedom today. Limited first editions available now.</p>
+    <a href="#" class="bg-white text-black font-bold py-3 px-6 rounded-full shadow-lg hover:bg-gray-200 transition duration-300">Get Your Copy</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-gray-400 py-10">
+    <p>© 2025 Aiden Valenciano | Reverberate</p>
+  </footer>
+</body>
+</html>
+"""
+
+# Save to file
+file_path = "/mnt/data/reverberate_landing_page.html"
+Path(file_path).write_text(landing_page_html)
+
+file_path
