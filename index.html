@@ -1,10 +1,18 @@
-from pathlib import Path
-from IPython.display import display, HTML
-
-# Create HTML5 landing page template as a string
-landing_page_html = """
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><header class="bg-[#14001f] text-white fixed top-0 left-0 w-full z-50 shadow-md">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <h1 class="text-xl font-bold tracking-wide">REVERBERATE</h1>
+    <nav class="space-x-6 text-sm hidden md:block">
+      <a href="#benefits" class="hover:text-yellow-300 transition">Why This Book</a>
+      <a href="#signup" class="hover:text-yellow-300 transition">Get a Copy</a>
+      <a href="#contact" class="hover:text-yellow-300 transition">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Add margin to offset fixed header -->
+<div class="h-20"></div>
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,6 +50,19 @@ landing_page_html = """
       Preorder Now
     </a>
   </div>
+</section>
+<section id="signup" class="bg-[#220032] text-white text-center py-20 px-6 md:px-20">
+  <h2 class="text-3xl md:text-4xl font-bold mb-6">Stay in the Loop</h2>
+  <p class="max-w-2xl mx-auto text-lg mb-8">
+    Be the first to know when the book drops, join the movement, and unlock exclusive early access content.
+  </p>
+  <form name="email-signup" method="POST" data-netlify="true" class="flex flex-col md:flex-row justify-center items-center gap-4">
+    <input type="email" name="email" required placeholder="Enter your email" 
+           class="px-6 py-3 w-full md:w-96 rounded-full text-black focus:outline-none">
+    <button type="submit" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-bold hover:bg-yellow-500 transition">
+      Notify Me
+    </button>
+  </form>
 </section>
 
 
@@ -82,6 +103,12 @@ landing_page_html = """
 
   </div>
 </section>
+<section class="bg-gradient-to-r from-purple-700 via-pink-600 to-yellow-400 text-white text-center py-20 px-6 md:px-32">
+  <h2 class="text-2xl md:text-3xl font-semibold mb-4">You were never the problem alone.</h2>
+  <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+    This book isn't just about blame—it's about reclaiming your story. About seeing how your pain mirrors someone else’s. And how healing doesn’t start when they change — it starts when you do.
+  </p>
+</section>
 
   <!-- Emotional Hook Section -->
   <section class="bg-gradient-to-r from-purple-900 via-pink-800 to-yellow-500 py-20 text-center">
@@ -97,10 +124,15 @@ landing_page_html = """
   </section>
 
   <!-- Footer -->
-  <footer class="text-center text-gray-400 py-10">
-    <p>© 2025 Aiden Valenciano | Reverberate</p>
+<footer class="bg-[#0d0014] text-white text-center py-12 px-6">
+  <div class="text-sm">
+    © 2025 Aiden Valenciano · <a href="mailto:hello@theblamewexchange.com" class="underline hover:text-yellow-300">Email</a> · 
+    <a href="https://github.com/TBWX/reverberate-landing-page" target="_blank" class="underline hover:text-yellow-300">GitHub</a>
+  </div>
+</footer>
+
   </footer>
 </body>
 </html>
-"""
+
 
