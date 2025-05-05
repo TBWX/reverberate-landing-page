@@ -14,6 +14,9 @@
 <div class="h-20"></div>
 
 <head>
+<!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Reverberate: The Blame We Exchange - A powerful self-help psychology book by Aiden Valenciano that challenges projection, accountability, and emotional patterns." />
@@ -117,11 +120,34 @@
   </section>
 
   <!-- Call to Action -->
-  <section id="order" class="text-center py-20">
-    <h2 class="text-3xl font-bold mb-6">Own the Book Everyone’s Talking About</h2>
-    <p class="mb-8">Start your journey toward emotional freedom today. Limited first editions available now.</p>
-    <a href="#" class="bg-white text-black font-bold py-3 px-6 rounded-full shadow-lg hover:bg-gray-200 transition duration-300">Get Your Copy</a>
-  </section>
+  <section id="order" 
+         class="bg-gradient-to-r from-[#1a0029] via-[#220032] to-[#1a0029] text-white py-24 px-6 text-center"
+         data-aos="fade-up"
+         data-aos-delay="200"
+         data-aos-offset="200">
+  <h2 class="text-4xl font-bold mb-6 tracking-wide">Order Reverberate Now</h2>
+  <p class="max-w-2xl mx-auto text-lg leading-relaxed mb-10">
+    Don’t just read a book—experience a psychological shift. Reserve your limited edition copy of
+    <strong>Reverberate: The Blame We Exchange</strong> and start decoding the patterns that keep you stuck.
+  </p>
+  <a href="https://buy.stripe.com/..." target="_blank"
+     class="inline-block px-8 py-4 text-lg font-bold rounded-full bg-yellow-400 text-black hover:bg-yellow-500 transition duration-300 shadow-xl shadow-yellow-500/30 glow-button">
+    🔥 Pre-Order Now
+  </a>
+  <p class="text-sm text-yellow-300 mt-4">
+    Limited First Edition • Ships Summer 2025
+  </p>
+</section>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    once: true,
+    easing: 'ease-in-out',
+  });
+</script>
 
   <!-- Footer -->
 <footer class="bg-[#0d0014] text-white text-center py-12 px-6">
