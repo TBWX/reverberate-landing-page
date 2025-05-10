@@ -1,105 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reverberate: Echoes of the Blame We Exchange</title>
-  <meta name="description" content="A transformational self-help book by Aiden Valenciano that confronts projection, emotional loops, and radical accountability." />
-  <meta name="keywords" content="Reverberate, Aiden Valenciano, self-help, emotional intelligence, gaslighting, trauma healing" />
-  <meta property="og:title" content="Reverberate: Echoes of the Blame We Exchange" />
-  <meta property="og:description" content="Explore projection, blame, and emotional patterns in this powerful new release." />
-  <meta property="og:image" content="https://theblamewexchange.com/assets/cover-preview.png" />
-  <meta property="og:url" content="https://theblamewexchange.com" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Reverberate: Echoes of the Blame We Exchange" />
-  <meta name="twitter:description" content="Explore projection, accountability, and emotional healing." />
-  <meta name="twitter:image" content="https://theblamewexchange.com/assets/cover-preview.png" />
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
-  <script defer>
-    document.addEventListener("DOMContentLoaded", function () {
-      if (typeof AOS !== "undefined") AOS.init();
-    });
-  </script>
-
-  <style>
-    html { scroll-behavior: smooth; }
-    body { background-color: #0f001c; }
-    .subtitle { color: gold; font-weight: bold; }
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    .animate-gradient {
-      background-size: 200% 200%;
-      animation: gradientShift 6s ease infinite;
-    }
-  </style>
-</head>
-
-<body class="text-white font-sans antialiased">
-
-  <!-- Header -->
-  <header class="bg-[#14001f] text-white fixed top-0 left-0 w-full z-50 shadow-md">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-      <h1 class="text-xl font-bold tracking-wide">REVERBERATE</h1>
-      <nav class="space-x-6 text-sm hidden md:block">
-        <a href="#benefits" class="hover:text-yellow-300 transition">Why This Book</a>
-        <a href="#kickstarter" class="hover:text-yellow-300 transition">Kickstarter</a>
-      </nav>
-    </div>
-  </header>
-
-  <div class="h-20"></div>
-
-  <!-- Hero Section -->
-  <section class="text-center py-24 bg-[#0f001c]">
-    <p class="text-sm tracking-widest uppercase text-white">AIDEN VALENCIANO</p>
-    <h1 class="text-7xl font-extrabold tracking-wide bg-gradient-to-r from-pink-400 via-pink-500 to-purple-400 text-transparent bg-clip-text">
-      REVERBERATE
-    </h1>
-    <h2 class="mt-2 text-yellow-400 tracking-widest text-lg uppercase">ECHOES OF THE BLAME WE EXCHANGE</h2>
-    <p class="mt-8 text-white text-xl font-mono tracking-widest uppercase">COMING SOON 2026</p>
-    <p class="text-yellow-400 font-semibold mt-4">Understanding Ourselves Through Others</p>
-    <p class="text-gray-300 max-w-xl mx-auto mt-4">
-      Break free from blame loops, projection, and gaslighting. This book is a mirror—and the reflection might just be your release.
-    </p>
-    <a href="#kickstarter"
-       class="inline-block mt-6 px-8 py-4 text-lg font-bold rounded-full bg-yellow-400 text-black hover:bg-yellow-500 transition duration-300 shadow-lg">
-       Preorder Now
-    </a>
-    <div class="mt-10 flex justify-center">
-      <img src="bookcover.png" class="w-64 md:w-72 border-4 border-yellow-400 rounded-lg shadow-xl" />
-    </div>
-  </section>
-
-  <!-- Benefits Section -->
-  <section id="benefits" class="bg-[#1a002d] text-white px-6 py-20 text-center">
-    <h2 class="text-4xl font-bold mb-6 tracking-wide">Why You Need This Book</h2>
-    <div class="max-w-4xl mx-auto space-y-4 text-lg leading-relaxed text-gray-300">
-      <p>• Decode projection, gaslighting, and accountability loops</p>
-      <p>• Unlock deep emotional intelligence and self-awareness</p>
-      <p>• Real-life stories and reflective exercises in every chapter</p>
-      <p>• Visually stunning and psychologically gripping</p>
-      <p>• Written for anyone ready to break the cycle</p>
-    </div>
-  </section>
-
-  <!-- Kickstarter Section -->
-  <section id="kickstarter" class="bg-[#0f001c] text-white px-6 py-20 text-center">
-    <h2 class="text-4xl font-bold mb-6 tracking-wide">Support Reverberate</h2>
-    <p class="max-w-xl mx-auto text-lg mb-6 text-gray-300">
-      Help bring this project to life and unlock exclusive content, merch, and early copies.
-    </p>
-    <a href="https://www.kickstarter.com/YOUR_CAMPAIGN_LINK" target="_blank"
-       class="inline-block px-8 py-4 text-lg font-bold rounded-full bg-yellow-400 text-black hover:bg-yellow-500 transition duration-300 shadow-lg">
-      Back Us on Kickstarter
-    </a>
-  </section>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverberate – The Blame We Exchange</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background-color: #0a0a0a;
+        overflow-x: hidden;
+      }
+      .bg-hero {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        z-index: -1;
+        filter: brightness(60%) contrast(110%);
+        animation: zoomSlow 20s ease-in-out infinite alternate;
+      }
+      @keyframes zoomSlow {
+        from { transform: scale(1); }
+        to { transform: scale(1.1); }
+      }
+      .embers {
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: url('embers.gif') center center / cover no-repeat;
+        opacity: 0.2;
+        mix-blend-mode: screen;
+        z-index: 0;
+        animation: flicker 1.5s infinite;
+      }
+      @keyframes flicker {
+        0%, 100% { opacity: 0.15; }
+        50% { opacity: 0.3; }
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        document.querySelectorAll(".fade-in").forEach(el => {
+          observer.observe(el);
+        });
+      });
+    </script>
+  </head>
+  <body class="text-white font-sans">
+    <section class="relative h-screen flex flex-col items-center justify-center text-center px-4 bg-black">
+      <img src="your-uploaded-image.jpeg" alt="Reverberate Cover" class="bg-hero" />
+      <div class="embers"></div>
+      <h1 class="text-6xl md:text-8xl font-bold tracking-widest text-white drop-shadow-lg">REVERBERATE</h1>
+      <p class="mt-3 text-yellow-400 text-xl md:text-2xl italic tracking-wider">Echoes of the Blame We Exchange</p>
+      <p class="mt-2 text-gray-300 text-sm md:text-base uppercase tracking-wide">Aiden Valenciano</p>
+      <a href="#preorder" class="mt-8 bg-red-600 hover:bg-red-700 px-6 py-3 text-white text-lg font-semibold rounded-lg transition">
+        Pre-Order on Kickstarter →
+      </a>
+    </section>
+    <section class="bg-black py-24 px-6 md:px-20 space-y-12 text-center">
+      <p class="fade-in text-2xl md:text-3xl font-medium text-white max-w-3xl mx-auto">You’ve blamed others.</p>
+      <p class="fade-in text-2xl md:text-3xl font-medium text-white max-w-3xl mx-auto">You’ve blamed yourself.</p>
+      <p class="fade-in text-3xl md:text-4xl font-bold text-yellow-400 max-w-4xl mx-auto">But what if the truth isn’t about blame at all?</p>
+    </section>
+    <section class="bg-[#111111] py-20 px-6 md:px-20">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Why This Book?</h2>
+        <p class="text-lg text-gray-300 leading-relaxed">
+          This isn't another self-help book. It's a raw, cinematic, unapologetic reflection of the blame we exchange,
+          the silence we weaponize, and the healing we deny.
+        </p>
+        <ul class="mt-8 space-y-3 text-left text-gray-200">
+          <li>🪞 For those who confuse survival with love</li>
+          <li>⚡ For those who need a mirror, not a mask</li>
+          <li>💥 For those tired of justifying red flags</li>
+          <li>🧠 For those ready to break the cycle</li>
+        </ul>
+      </div>
+    </section>
+    <section id="preorder" class="bg-gradient-to-r from-red-800 via-red-600 to-yellow-500 py-16 px-6 text-center">
+      <h3 class="text-3xl md:text-4xl font-bold text-black">Join the Movement</h3>
+      <p class="mt-4 text-lg text-black">
+        Support the campaign and get exclusive behind-the-scenes updates, bonus excerpts, and limited signed editions.
+      </p>
+      <a href="https://www.kickstarter.com/projects/YOUR-LINK" target="_blank"
+        class="mt-6 inline-block bg-black text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-gray-900 transition">
+        🔥 Back It Now on Kickstarter
+      </a>
+    </section>
+    <footer class="bg-black py-10 px-6 text-center text-gray-500 text-sm">
+      <p>&copy; 2025 Aiden Valenciano. All Rights Reserved.</p>
+      <p class="mt-1 italic text-gray-600">“Echoes don’t lie. They repeat until you listen.”</p>
+    </footer>
+  </body>
 </html>
