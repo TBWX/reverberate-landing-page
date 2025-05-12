@@ -1,171 +1,508 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>REVERBERATE - Visible Title + Embers</title>
+  <title>REVERBERATE - Official Page</title>
   <style>
-    /* ===== DEBUG RESET ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     /* ===== BASE STYLES ===== */
     :root {
-      --cold: #00a8ff;
-      --neutral: #fbc531;
-      --hot: #e84118;
-      --gold: #d4af37;
-      --charcoal: #1e1e1e;
+      --gold: #f5d393;
+      --black: #000000;
       --navy: #0a1128;
-      --dawn-red: #e63946;
-      --ember-orange: #ff6d00;
+      --white: #ffffff;
     }
     
     body {
-      min-height: 200vh;
-      font-family: 'Bebas Neue', sans-serif;
-      color: white;
-      overflow-x: hidden;
-      background: linear-gradient(to bottom, 
-        #8a0303 0%, 
-        var(--dawn-red) 20%, 
-        #e67e22 60%, 
-        var(--charcoal) 100%);
-    }
-
-    /* ===== TITLE (NOW VISIBLE) ===== */
-    .title-wrapper {
-      position: relative; /* Changed from sticky */
-      z-index: 100;
-      text-align: center;
-      padding: 20vh 0;
-      margin-top: 80px; /* Space for nav */
-    }
-
-    .thermal-title {
-      font-weight: 900;
-      font-size: clamp(3rem, 8vw, 6rem);
-      letter-spacing: 1rem;
       margin: 0;
-      text-transform: uppercase;
+      background: var(--black);
+      color: white;
+      font-family: 'Bebas Neue', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    .content {
       position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 2rem;
     }
 
-    .letter {
-      display: inline-block;
-      animation: thermal-shift 6s infinite alternate;
-      text-shadow: 0 0 10px currentColor;
+    /* ===== HEADER TYPOGRAPHY ===== */
+    .author-name {
+      font-size: 1.4rem;
+      letter-spacing: 0.5rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fade-in 1s ease-out 0.3s forwards;
     }
 
-    @keyframes thermal-shift {
-      0% { color: var(--cold); }
-      50% { color: var(--neutral); }
-      100% { color: var(--hot); }
+    .title {
+      font-size: 4.5rem;
+      font-weight: 700;
+      letter-spacing: 0.3rem;
+      margin: 0.5rem 0;
+      color: white;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fade-in 1s ease-out 0.5s forwards;
+      text-shadow: 0 0 10px rgba(245, 211, 147, 0.3);
     }
 
     .subtitle {
-      font-family: 'Playfair Display', serif;
-      color: var(--gold);
-      letter-spacing: 0.5rem;
-      font-size: clamp(1rem, 2vw, 1.5rem);
-      margin-top: 1rem;
+      font-size: 1.2rem;
+      letter-spacing: 0.15rem;
+      color: rgba(255,255,255,0.7);
       text-transform: uppercase;
-      text-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+      margin-top: 1rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fade-in 1s ease-out 0.7s forwards;
+      line-height: 1.4;
     }
 
-    /* ===== EMBERS (BELOW TITLE) ===== */
-    .ember {
-      position: fixed;
-      width: 8px;
-      height: 8px;
-      background: radial-gradient(circle, var(--ember-orange), #ffbe0b);
-      border-radius: 50%;
-      filter: blur(0.5px);
-      pointer-events: none;
-      z-index: 1; /* Below title */
-      animation: float-up 15s linear infinite;
+    /* ===== BUTTONS ===== */
+    .buttons {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      opacity: 0;
+      animation: fade-in 1s ease-out 1s forwards;
     }
 
-    @keyframes float-up {
-      0% {
-        transform: translateY(100vh) translateX(0) scale(0.5);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      90% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-100px) translateX(100px) scale(1.2);
-        opacity: 0;
-      }
+    .btn {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 0.8rem 2rem;
+      font-family: 'Bebas Neue';
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
-    /* ===== NAV BAR ===== */
-    .nav-container {
+    .btn:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* ===== EXCERPT SECTION ===== */
+    .excerpt-section {
+      max-width: 800px;
+      margin: 0 auto;
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+      color: #333;
+      background: var(--white);
+      padding: 3rem;
+      border-radius: 8px;
+      transform: translateY(100vh);
+      opacity: 0;
+      position: relative;
+      z-index: 5;
+      box-shadow: 0 0 30px rgba(0,0,0,0.5);
+      transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .excerpt-section.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .excerpt-section img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    /* ===== ENHANCED BENEFITS SECTION ===== */
+    .book-benefits {
+      max-width: 800px;
+      margin: 0 auto;
+      font-family: 'Georgia', serif;
+      line-height: 1.7;
+      color: #222;
+      background: var(--white);
+      padding: 3rem;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+      transform: translateY(50px);
+      opacity: 0;
+      transition: all 0.8s ease-out;
+    }
+
+    .book-benefits.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .book-benefits::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--gold), var(--navy));
+    }
+
+    .book-benefits h2 {
+      font-size: 2.2em;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      position: relative;
+      padding-left: 1rem;
+      font-weight: 700;
+    }
+
+    .book-benefits h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 1rem;
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+    }
+
+    .book-benefits h3 {
+      font-size: 1.6em;
+      color: var(--navy);
+      margin: 2em 0 1em;
+      padding-left: 1rem;
+      border-left: 3px solid var(--gold);
+    }
+
+    .book-benefits ul {
+      padding-left: 1.5rem;
+      list-style-type: none;
+    }
+
+    .book-benefits li {
+      margin-bottom: 1em;
+      padding-left: 1.5rem;
+      position: relative;
+      opacity: 0;
+      transform: translateX(-20px);
+      animation: fade-in 0.6s ease-out forwards;
+    }
+
+    .book-benefits li::before {
+      content: "•";
+      color: var(--gold);
+      font-size: 1.8em;
+      position: absolute;
+      left: -0.5rem;
+      top: -0.3rem;
+    }
+
+    .book-benefits strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .book-benefits em {
+      font-style: italic;
+      color: #555;
+      background: linear-gradient(to right, var(--gold), var(--gold));
+      background-size: 100% 1px;
+      background-repeat: no-repeat;
+      background-position: 0 90%;
+    }
+
+    .book-benefits blockquote {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.5rem;
+      font-style: italic;
+      color: #444;
+      margin: 2em 0;
+      font-size: 1.1em;
+    }
+
+    /* ===== SIGNUP FORM ===== */
+    .signup-form {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 3rem;
+      border-radius: 8px;
+      transform: translateY(50px);
+      opacity: 0;
+      transition: all 0.8s ease-out 0.2s;
+    }
+
+    .signup-form.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .form-title {
+      font-family: 'Bebas Neue';
+      letter-spacing: 0.2rem;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      font-size: 1.3rem;
+    }
+
+    .form-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .email-input {
+      padding: 0.8rem 1.2rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: 'Georgia';
+      width: 300px;
+      max-width: 100%;
+    }
+
+    .submit-btn {
+      background: var(--navy);
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      font-family: 'Bebas Neue';
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+    }
+
+    .submit-btn:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .form-note {
+      font-size: 0.8rem;
+      color: #777;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    /* ===== BACKGROUND ===== */
+    .bg-effect {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
-      padding: 1rem;
-      background: rgba(10, 17, 40, 0.9);
-      z-index: 200;
+      height: 100%;
+      background: radial-gradient(circle at center, var(--navy) 0%, var(--black) 70%);
+      z-index: 1;
     }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fade-in {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== UTILITIES ===== */
+    .no-wrap { white-space: nowrap; }
   </style>
 </head>
 <body>
-  <!-- Nav -->
-  <nav class="nav-container">
-    <a href="#" style="color:white;text-decoration:none">REVERBERATE</a>
-  </nav>
+  <!-- Cinematic Background -->
+  <div class="bg-effect"></div>
 
-  <!-- Now-Visible Title -->
-  <div class="title-wrapper">
-    <h1 class="thermal-title">
-      <span class="letter">R</span>
-      <span class="letter">E</span>
-      <span class="letter">V</span>
-      <span class="letter">E</span>
-      <span class="letter">R</span>
-      <span class="letter">B</span>
-      <span class="letter">E</span>
-      <span class="letter">R</span>
-      <span class="letter">A</span>
-      <span class="letter">T</span>
-      <span class="letter">E</span>
-    </h1>
-    <p class="subtitle">ECHOES OF THE BLAME WE EXCHANGE</p>
+  <!-- Main Content -->
+  <div class="content">
+    <div class="author-name">AIDENVALENCIANO</div>
+    <h1 class="title">REVERBERATE</h1>
+    <div class="subtitle">ECHOES OFTHE BLAME WEEXCHANGE</div>
+    
+    <!-- Buttons -->
+    <div class="buttons">
+      <button id="excerptBtn" class="btn">READ EXCERPT</button>
+      <button class="btn">PRE-ORDER</button>
+    </div>
   </div>
 
-  <!-- Embers Container -->
-  <div id="embers-container"></div>
+  <!-- Excerpt Section -->
+  <div id="excerptSection" class="excerpt-section">
+    <img src="https://www.vecteezy.com/video/22412119-isolated-man-is-looking-at-his-phone-in-the-dark" alt="Man looking at phone in the dark">
+    
+    <h2>Excerpt from <em>Reverberate: The Blame We Exchange</em></h2>
+    
+    <p><strong>"We weren't just fighting each other—we were fighting ourselves."</strong></p>
+    
+    <p>He looked at me like I was the problem. And maybe I was. But not in the way he made it seem.</p>
+    
+    <p>One night, after yet another argument that spiraled into silence, I found myself staring at him while he scrolled through his phone—again—and I realized: he wasn't going to stop. Not lying. Not deflecting. Not pretending I hadn't just asked him a direct question.</p>
+    
+    <p>I wasn't just angry at him. I was angry at myself—for needing an answer I already knew, for hoping this time would be different, and for calling it love when it was really just recognition... the familiarity of dysfunction.</p>
+    
+    <p>The worst part? I still wanted him to hold me.</p>
+    
+    <p>That's what this book is about. That quiet pull to stay even when the truth is screaming. The echoes we ignore until they become patterns. The way we lie to ourselves and call it forgiveness.</p>
+    
+    <p>I thought I could fix it.</p>
+    
+    <p>I thought if I explained myself better, loved harder, gave more, I'd finally be enough to make him choose me over the silence.</p>
+    
+    <p>But I was never in competition with another person.</p>
+    
+    <p>I was in competition with the version of himself he was afraid to confront.</p>
+    
+    <p>And the version of myself I refused to let go of.</p>
+    
+    <p><em>Sometimes, the mirror doesn't break. It just reflects the parts of us we're not brave enough to face. Yet.</em></p>
+  </div>
 
-  <script>
-    // Generate embers
-    const container = document.getElementById('embers-container');
-    for (let i = 0; i < 50; i++) {
-      const ember = document.createElement('div');
-      ember.className = 'ember';
-      ember.style.left = `${Math.random() * 100}vw`;
-      ember.style.animationDuration = `${10 + Math.random() * 20}s`;
-      ember.style.animationDelay = `${Math.random() * 15}s`;
-      container.appendChild(ember);
-    }
+  <!-- Why You'll Want This Book Section -->
+  <div id="benefitsSection" class="book-benefits">
+    <h2>💥 Why You’ll Want This Book</h2>
+    <p><strong><em>REVERBERATE: The Blame We Exchange</em></strong> isn’t here to make you feel better. It’s here to make you <em>feel seen</em>.</p>
 
-    // Mouse interaction (optional)
-    document.addEventListener('mousemove', (e) => {
-      const embers = document.querySelectorAll('.ember');
-      embers.forEach(ember => {
-        // Add repel effect if needed
-      });
-    });
-  </script>
+    <p>This book is for you if…</p>
+    <ul>
+      <li>You’ve ever apologized just to end an argument—knowing deep down, you weren’t the one who caused it.</li>
+      <li>You’ve questioned your sanity after hearing the words <em>“That never happened.”</em></li>
+      <li>You’ve been the one who tried to fix things. Who stayed. Who loved harder.</li>
+      <li>You’ve defended someone in public while bleeding in private.</li>
+      <li>You’ve gaslit yourself just to keep the peace.</li>
+    </ul>
+
+    <p><strong>This book will hit you in the chest</strong>—not because it’s painful, but because it’s <em>true</em>.</p>
+
+    <h3>🪞 What You’ll Get Isn’t Just a Story. It’s a Mirror.</h3>
+    <ul>
+      <li>Real stories, not sanitized ones.</li>
+      <li>Emotional truths, not advice columns.</li>
+      <li>The physiological damage of lying—<strong>yes, lies literally drain your body</strong>.</li>
+      <li>What to do when they blame you for things they’re actually doing themselves.</li>
+      <li>A brutally clear roadmap to escape emotional circular arguments, subtle manipulation, and connection that <em>feels</em> real but costs your dignity.</li>
+    </ul>
+
+    <h3>🧠 Psychology Meets Survival</h3>
+    <p>Every chapter pulls from trauma theory, emotional intelligence, and human patterning—while holding space for the messiness of being in love with someone who weaponizes their pain.</p>
+    <p>You’ll learn why some people feel like “home”... and why that’s not always a good thing.</p>
+    <p>You’ll learn how projection works, how blame becomes a language, and why silence can hurt more than shouting ever could.</p>
+
+    <h3>💔 And If You’ve Ever Thought:</h3>
+    <blockquote>
+      “I just want them to understand how they’re hurting me.”
+    </blockquote>
+    <p>This book won’t promise to fix them. But it will teach you how to stop fixing people who don’t want to change.</p>
+
+    <h3>❤️‍🔥 You’re not here because everything’s fine.</h3>
+    <p>You’re here because something echoes—and this book knows exactly how that feels.</p>
+    <p><strong>You won’t just read it. You’ll recognize yourself in it.</strong><br>
+    And when you do, you’ll finally stop asking:<br>
+    <em>“Was it my fault?”</em></p>
+  </div>
+
+  <!-- Email Signup Form -->
+  <div id="signupForm" class="signup-form">
+    <div class="form-title">STAY UPDATED ON THE RELEASE</div>
+    <form id="emailForm">
+      <div class="form-group">
+        <input type="email" class="email-input" placeholder="Your email address" required>
+        <button type="submit" class="submit-btn">NOTIFY ME</button>
+      </div>
+      <div class="form-note">Get early access to the Kickstarter and exclusive content</div>
+    </form>
+  </div>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Georgia:wght@400;700&display=swap" rel="stylesheet">
+
+  <script>
+    // Excerpt button functionality
+    const excerptBtn = document.getElementById('excerptBtn');
+    const excerptSection = document.getElementById('excerptSection');
+    const benefitsSection = document.getElementById('benefitsSection');
+    const signupForm = document.getElementById('signupForm');
+
+    excerptBtn.addEventListener('click', function() {
+      // Show all sections
+      excerptSection.classList.add('visible');
+      benefitsSection.classList.add('visible');
+      signupForm.classList.add('visible');
+      
+      // Scroll to excerpt
+      setTimeout(() => {
+        excerptSection.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+      
+      // Change button text
+      this.textContent = 'CLOSE EXCERPT';
+      this.removeEventListener('click', arguments.callee);
+      this.addEventListener('click', closeSections);
+    });
+
+    function closeSections() {
+      // Hide all sections
+      excerptSection.classList.remove('visible');
+      benefitsSection.classList.remove('visible');
+      signupForm.classList.remove('visible');
+      
+      // Scroll back to top
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      
+      // Reset button
+      excerptBtn.textContent = 'READ EXCERPT';
+      excerptBtn.removeEventListener('click', closeSections);
+      excerptBtn.addEventListener('click', function() {
+        excerptSection.classList.add('visible');
+        benefitsSection.classList.add('visible');
+        signupForm.classList.add('visible');
+        setTimeout(() => {
+          excerptSection.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
+        this.textContent = 'CLOSE EXCERPT';
+        this.addEventListener('click', closeSections);
+      });
+    }
+
+    // Form submission
+    document.getElementById('emailForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.querySelector('.email-input').value;
+      // In a real implementation, you would send this to your email service
+      alert(`Thanks! We'll notify you at ${email} about the release.`);
+      this.querySelector('.email-input').value = '';
+    });
+
+    // Animate list items when benefits section is visible
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const items = entry.target.querySelectorAll('li');
+          items.forEach((item, i) => {
+            item.style.animationDelay = `${i * 0.15}s`;
+          });
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(benefitsSection);
+  </script>
 </body>
 </html>
