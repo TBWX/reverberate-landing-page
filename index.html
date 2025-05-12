@@ -37,26 +37,64 @@
       pointer-events: none;
     }
     
-    .thermal-title {
-      font-weight: 900;
-      font-size: clamp(3rem, 5vw, 6rem);
-      letter-spacing: 1rem;
-      margin: 0;
-      text-transform: uppercase;
-      padding: 2rem 0;
-    }
-    
-    .letter {
-      display: inline-block;
-      animation: thermal-shift 6s infinite alternate;
-      text-shadow: 0 0 15px currentColor;
-      transition: transform 0.3s ease;
-    }
-    
-    .letter:hover {
-      transform: scale(1.2);
-      text-shadow: 0 0 25px currentColor;
-    }
+  /* CSS (Critical Updates) */
+.thermal-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 900;
+  font-size: clamp(4rem, 8vw, 7rem); /* Larger base size */
+  letter-spacing: 1.5rem; /* Wider spacing */
+  margin: 0;
+  position: relative;
+  z-index: 2; /* Above shadow */
+  text-rendering: optimizeLegibility; /* Sharpens text */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* New: Black blurred shadow */
+.title-shadow {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: black;
+  filter: blur(15px);
+  opacity: 0.7;
+  z-index: 1;
+}
+
+/* Subtitle Enhancements */
+.subtitle {
+  font-family: 'Playfair Display', serif;
+  color: gold;
+  letter-spacing: 0.8rem; /* Wider spacing */
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.8); /* Gold glow */
+  position: relative;
+  z-index: 2;
+}
+
+/* Sharper thermal animation */
+.letter {
+  display: inline-block;
+  animation: thermal-shift 6s infinite alternate;
+  text-shadow: none; /* Remove text glow for crispness */
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+/* Optional: Add outline for extra sharpness */
+.letter::after {
+  content: attr(data-letter);
+  position: absolute;
+  left: 0;
+  -webkit-text-stroke: 1px rgba(0,0,0,0.3); /* Subtle black outline */
+  z-index: -1;
+}
     
     /* ===== SUBTITLE ===== */
     .subtitle {
@@ -121,22 +159,24 @@
 </head>
 <body>
   <!-- Title Section -->
-  <div class="title-wrapper" id="titleWrapper">
-    <h1 class="thermal-title">
-      <span class="letter">R</span>
-      <span class="letter">E</span>
-      <span class="letter">V</span>
-      <span class="letter">E</span>
-      <span class="letter">R</span>
-      <span class="letter">B</span>
-      <span class="letter">E</span>
-      <span class="letter">R</span>
-      <span class="letter">A</span>
-      <span class="letter">T</span>
-      <span class="letter">E</span>
-    </h1>
-    <p class="subtitle">ECHOES OF THE BLAME WE EXCHANGE</p>
-  </div>
+  <!-- HTML (Updated Structure) -->
+<div class="title-wrapper" id="titleWrapper">
+  <div class="title-shadow"></div> <!-- New shadow element -->
+  <h1 class="thermal-title">
+    <span class="letter">R</span>
+    <span class="letter">E</span>
+    <span class="letter">V</span>
+    <span class="letter">E</span>
+    <span class="letter">R</span>
+    <span class="letter">B</span>
+    <span class="letter">E</span>
+    <span class="letter">R</span>
+    <span class="letter">A</span>
+    <span class="letter">T</span>
+    <span class="letter">E</span>
+  </h1>
+  <p class="subtitle">ECHOES OF THE BLAME WE EXCHANGE</p>
+</div>
 
   <!-- Demo Form Section -->
   <section class="email-form">
